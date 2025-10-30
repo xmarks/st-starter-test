@@ -1,0 +1,163 @@
+// Import variables and mixins.
+@import "abstracts/abstracts";
+
+.editor-styles-wrapper {
+
+  /*--------------------------------------------------------------
+  # Generic
+  --------------------------------------------------------------*/
+
+  /* Normalize
+  --------------------------------------------- */
+  @import "generic/normalize";
+
+  /* Box sizing
+  --------------------------------------------- */
+  box-sizing: border-box; // acts as HTML selector
+  @import "generic/box-sizing";
+
+  /*--------------------------------------------------------------
+  # Base
+  --------------------------------------------------------------*/
+
+  /* Typography
+  --------------------------------------------- */
+  // dump from => "base/typography/typography";
+  color: $color__text-main;
+  font-family: $font__main;
+  font-size: 1rem;
+  line-height: $font__line-height-body;
+
+  button,
+  input,
+  select,
+  optgroup,
+  textarea {
+    color: $color__text-main;
+    font-family: $font__main;
+    font-size: 1rem;
+    line-height: $font__line-height-body;
+  }
+
+  @import "base/typography/headings";
+  @import "base/typography/copy";
+
+  /* Elements
+  --------------------------------------------- */
+  // dump from => "base/elements/body";
+  background: $color__background-body; // Fallback for when there is no custom background color defined.
+
+  @import "base/elements/container";
+  @import "base/elements/svg";
+  @import "base/elements/hr";
+  @import "base/elements/lists";
+  @import "base/elements/media";
+  @import "base/elements/tables";
+
+  /* Links
+  --------------------------------------------- */
+  @import "base/elements/links";
+
+  /* Forms
+  --------------------------------------------- */
+  @import "base/elements/buttons";
+  @import "base/elements/fields";
+
+  /*--------------------------------------------------------------
+  # Components
+  --------------------------------------------------------------*/
+  @import "components/components";
+
+  // Force Show animated elements
+  .animate__animated.opacity-0 {
+    opacity: 1!important;
+  }
+}
+
+// Page Notice
+.components-editor-notices__dismissible .components-notice, .components-editor-notices__pinned .components-notice {
+  z-index: 1;
+}
+
+// Customizer Styles - Admin Section
+#customize-controls {
+
+  .customize-control {
+
+    // CSS style checkboxes as toggle switches
+    // src: https://codepen.io/chriscoyier/pen/JjozJLv
+    &.customize-control-checkbox {
+
+      // wrapper
+      .customize-inside-control-row {
+        margin-left: 0;
+        display: flex;
+
+        input {
+          display: none;
+
+          &:checked {
+
+            + label {
+
+              &:before {
+                background-color: #89c12d;
+              }
+
+              &:after {
+                left: 24px;
+              }
+            }
+          }
+        }
+
+        label {
+          position: relative;
+
+          padding-left: calc(48px + 5px);
+
+          &:before,
+          &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            cursor: pointer;
+          }
+
+          &:before {
+            top: 0;
+            left: 0;
+            width: 48px;
+            height: 24px;
+
+            background-color: #dedede;
+            border-radius: 9999em;
+            -webkit-transition: background-color 0.25s ease;
+            transition: background-color 0.25s ease;
+          }
+
+          &:after {
+            top: 0;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
+            -webkit-transition: left 0.25s ease;
+            transition: left 0.25s ease;
+          }
+        }
+      }
+    }
+  }
+
+  // CodeMirror Styles
+  .customize-control-code_editor {
+    .CodeMirror-wrap {
+      height: 100%;
+    }
+  }
+}
+
+

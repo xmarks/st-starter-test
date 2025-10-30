@@ -1,0 +1,11 @@
+/**
+ * Styles here will be auto-registered
+ * - registered style names are generated with a dot-notation
+ * - you can call this particular style by calling:
+ * - wp_enqueue_style('plugins.splidejs.core')
+ *
+ * Load & Compile npm plugins yourself so they are available
+ *  without the need to install NPM on the Live Server.
+ */
+
+@import "../../../../../node_modules/@splidejs/splide/src/css/core/index";

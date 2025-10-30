@@ -1,0 +1,44 @@
+{
+  "name": "xmarks/st-starter",
+  "type": "wordpress-theme",
+  "description": "Starter Theme for WordPress",
+  "keywords": [
+    "WordPress",
+    "Themes"
+  ],
+  "homepage": "https://github.com/xmarks/st-starter",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "SnailTheme",
+      "homepage": "https://www.snailtheme.com/"
+    }
+  ],
+  "require": {
+    "php": ">=8.2"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.9",
+    "wp-coding-standards/wpcs": "dev-main",
+    "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+    "php-parallel-lint/php-parallel-lint": "^1.4",
+    "wp-cli/wp-cli": "^2.9",
+    "wp-cli/i18n-command": "^2.3",
+    "symfony/var-dumper": "^7.2"
+  },
+  "scripts": {
+    "lint:wpcs": "php vendor/bin/phpcs --standard=WordPress --ignore=vendor,node_modules,*.min.js,*.js,*.min.css,vite.config.js,debug.php .",
+    "lint:wpcs:fix": "php vendor/bin/phpcbf --standard=WordPress --ignore=vendor,node_modules,*.min.js,*.js,*.min.css,vite.config.js,debug.php .",
+    "lint:php": "php vendor/bin/parallel-lint --exclude vendor --exclude node_modules .",
+    "make-pot": "vendor/bin/wp i18n make-pot . languages/st-starter.pot"
+  },
+  "support": {
+    "issues": "https://github.com/xmarks/st-starter/issues",
+    "source": "https://github.com/xmarks/st-starter"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
+}
