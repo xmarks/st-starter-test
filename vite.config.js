@@ -260,8 +260,26 @@ export default defineConfig({
     ],
     server: {
         watch: {
-            // Ignore output JS folder from watch - prevents loop
-            ignored: ['**/assets/js/**']
+            // Exclude large directories and files that don't need watching
+            ignored: [
+                '**/assets/js/**',       // Existing exclusion
+                '**/vendor/**',          // PHP dependencies
+                '**/node_modules/**',    // Node dependencies
+                '**/.git/**',            // Version control
+                '**/tests/**',           // Test directories
+                '**/Test/**',            // Test directories (case variation)
+                '**/coverage/**',        // Test coverage
+                '**/docs/**',            // Documentation
+                '**/documentation/**',   // Documentation
+                '**/*.log',              // Log files
+                '**/cache/**',           // Cache directories
+                '**/tmp/**',             // Temporary files
+                '**/temp/**'             // Temporary files
+            ],
+            // Use polling for network drives (slower but more reliable)
+            usePolling: true, // Vite periodically checks instead of using native file watching - useful for network drive
+            interval: 1000, // 1 second interval for files
+            binaryInterval: 3000 // 3 seconds interval for binary files (like images, fonts, videos)
         }
     }
 });
