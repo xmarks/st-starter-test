@@ -197,14 +197,14 @@ if ( ! function_exists( 'st_generate_img' ) ) :
 		$sizes  = wp_get_attachment_image_sizes( $attachment_id, $size );
 
 		$alt         = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true );
-		$image_class = 'wp-image-' . $attachment_id . ( $classes ? ' ' . esc_attr( $classes ) : '' );
+        $image_class = 'wp-image-' . $attachment_id;
 		$url         = $image_src[0];
 		$width       = $image_src[1];
 		$height      = $image_src[2];
 
-		$figure_class = 'wp-block-image size-' . esc_attr( $size );
+        $figure_class = 'wp-block-image size-' . esc_attr( $size ) . ( $classes ? ' ' . esc_attr( $classes ) : '' );
 
-		return sprintf(
+        return sprintf(
 			'<figure class="%s"><img fetchpriority="%s" decoding="async" width="%d" height="%d" src="%s" alt="%s" class="%s" srcset="%s" sizes="%s" /></figure>',
 			esc_attr( $figure_class ),
 			esc_attr( $fetch_priority ),
