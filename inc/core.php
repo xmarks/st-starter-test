@@ -65,29 +65,29 @@ function st_starter_plugins_suggestions(): void {
 		return; // User has dismissed the notice.
 	}
 
-	// List of suggested plugins and their download links.
-	$required_plugins = array(
-		'index-wp-mysql-for-speed/index-wp-mysql-for-speed.php' => array(
-			'name' => 'Index WP MySQL For Speed',
-			'url'  => 'https://wordpress.org/plugins/index-wp-mysql-for-speed/',
-		),
-		'redis-cache/redis-cache.php'                     => array(
-			'name' => 'Redis Object Cache',
-			'url'  => 'https://wordpress.org/plugins/redis-cache/',
-		),
-		'regenerate-thumbnails/regenerate-thumbnails.php' => array(
-			'name' => 'Regenerate Thumbnails',
-			'url'  => 'https://wordpress.org/plugins/regenerate-thumbnails/',
-		),
-		'svg-support/svg-support.php'                     => array(
-			'name' => 'SVG Support',
-			'url'  => 'https://wordpress.org/plugins/svg-support/',
-		),
-		'webp-converter-for-media'                        => array(
-			'name' => 'Converter for Media',
-			'url'  => 'https://wordpress.org/plugins/webp-converter-for-media/',
-		),
-	);
+    // List of suggested plugins and their download links.
+    $required_plugins = array(
+        'index-wp-mysql-for-speed/index-wp-mysql-for-speed.php' => array(
+            'name' => 'Index WP MySQL For Speed',
+            'url'  => 'https://wordpress.org/plugins/index-wp-mysql-for-speed/',
+        ),
+        'redis-cache/redis-cache.php'                           => array(
+            'name' => 'Redis Object Cache',
+            'url'  => 'https://wordpress.org/plugins/redis-cache/',
+        ),
+        'regenerate-thumbnails/regenerate-thumbnails.php'       => array(
+            'name' => 'Regenerate Thumbnails',
+            'url'  => 'https://wordpress.org/plugins/regenerate-thumbnails/',
+        ),
+        'svg-support/svg-support.php'                           => array(
+            'name' => 'SVG Support',
+            'url'  => 'https://wordpress.org/plugins/svg-support/',
+        ),
+        'webp-converter-for-media/webp-converter-for-media.php' => array(
+            'name' => 'Converter for Media',
+            'url'  => 'https://wordpress.org/plugins/webp-converter-for-media/',
+        ),
+    );
 
 	$inactive_plugins = array();
 
