@@ -32,6 +32,11 @@ class ST_Walker_Nav_Menu extends Walker_Nav_Menu {
 	 */
 	public function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
 
+        // Convert array to object if necessary for backward compatibility
+        if (is_array($args)) {
+            $args = (object) $args;
+        }
+
 		/* ───── 1. Prep the <li> wrapper exactly like core does ───── */
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
